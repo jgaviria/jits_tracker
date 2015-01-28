@@ -1,0 +1,28 @@
+<div class="all">
+    <div class="center">
+        <div class="box">
+
+<h3> Log in</h3>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <br>
+    <%= f.text_field :username, placeholder: 'Username' %>
+  </div>
+
+  <div class="field">
+    <br>
+    <%= f.password_field :password, placeholder: 'Password' %>
+  </div>
+              <%= render "devise/shared/links" %>
+
+   <br>
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+    <% end %>
+
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails jits_tracker: development" uuid="28421db7-646d-4386-b1ef-007d6ba81c37">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails jits_tracker: test" uuid="424f39bd-dc04-4abe-b84c-425968570c1c">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails jits_tracker: production" uuid="2ae26ce6-0514-4e63-b270-4b3a01911e62">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>
