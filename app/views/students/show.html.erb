@@ -13,12 +13,15 @@
 <p>
   <strong>Current rank:</strong>
   <%= @student.current_rank %>
-</p>
+</p>3
 
 <p>
   <strong>Start date:</strong>
   <%= @student.start_date %>
 </p>
+
+
+<%= image_tag @student.avatar.url(:thumb) %>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>

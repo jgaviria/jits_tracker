@@ -19,6 +19,7 @@
     <% @students.each do |student| %>
 
       <tr>
+        <td> <%= image_tag student.avatar.url(:thumb) %> </td>
         <td><%= student.first_name %></td>
         <td><%= student.last_name %></td>
         <td><%= student.current_rank %></td>

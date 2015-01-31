@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
       get 'update'
 
+
   end
 
   get 'signin', to: 'students#signin'
