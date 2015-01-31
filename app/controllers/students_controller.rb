@@ -2,12 +2,13 @@ class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
 
+require 'will_paginate/array'
 
 
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    @students = Student.all.paginate(:page => params[:page], :per_page => 4)
     @student = Student.new
 
 
@@ -22,9 +23,11 @@ class StudentsController < ApplicationController
 
 
   def signin
-    @students = Student.all
+
+    @students = Student.search(params[:search]).order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
 
   end
+
 
   def dash
     @students = Student.all
@@ -98,3 +101,6 @@ end
       params.require(:student).permit(:avatar, :first_name, :last_name, :current_rank, :start_date, :attendence, checkins_attributes:[:day])
     end
 end
+
+
+

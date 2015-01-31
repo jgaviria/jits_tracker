@@ -30,6 +30,7 @@ gem 'less'
 gem 'lazy_high_charts'
 gem 'better_errors'
 gem "paperclip", "~> 4.2"
+gem 'will_paginate'
 
 #gem 'binding_at_caller'
 # Use ActiveModel has_secure_password

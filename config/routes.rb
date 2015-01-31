@@ -20,9 +20,13 @@ Rails.application.routes.draw do
 
   get 'signin', to: 'students#signin'
 
+  get 'search', to: 'students#search'
+
+  post 'search', to: 'students#search'
+
   get 'dash', to: 'students#dash'
 
-  root to: "students#dash"
+  root to: "students#signin"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
