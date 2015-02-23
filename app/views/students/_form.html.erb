@@ -1,42 +1,41 @@
+
 <%= form_for @student,:url => students_path, :html => { :multipart => true } do |f| %>
-  <% if @student.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
-
-      <ul>
-      <% @student.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <% if @student.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+          <ul>
+            <% @student.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="control-group">
+      <%= f.label :first_name %><br>
+      <%= f.text_field :first_name %>
     </div>
-  <% end %>
-
-
-
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :current_rank %><br>
-    <%= f.text_field :current_rank %>
-  </div>
-  <div class="field">
-    <%= f.label :start_date %><br>
-    <%= f.date_select :start_date %>
-  </div>
-    <br>
     <div class="field">
-    <%= f.file_field :avatar %>
+      <%= f.label :last_name %><br>
+      <%= f.text_field :last_name %>
     </div>
-    <br>
+    <div class="field">
+      <%= f.label :current_rank %><br>
+      <%= f.text_field :current_rank %>
+    </div>
+    <div class="field">
+      <%= f.label :start_date %><br>
+      <%= f.date_select :start_date %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="field">
+      <%= f.file_field :avatar %>
+    </div>
+
+    <br>
+    <div class="form-actions2">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  students_path, :class => 'btn' %>
+    </div>
 <% end %>
 

@@ -10,21 +10,15 @@
 </form>
 
 
-
-
-<table class="table table-hover">
+<table class="table table-striped">
   <thead>
-
-    <tr>
+  <tr>
       <th></th>
       <th>First name</th>
       <th>Last name</th>
       <th>Attendence</th>
-
-      <th colspan="3"></th>
-    </tr>
+  </tr>
   </thead>
-
   <tbody>
 
     <% @students.each do |student| %>
@@ -34,7 +28,7 @@
         <td><%= student.first_name %></td>
         <td><%= student.last_name %></td>
         <div class="submit_id">
-        <td><%= button_to 'sign-in', checkins_path, method: :post, :params => {"checkin[student_id]" => student.id } %></td>
+        <td><%= button_to 'sign-in', checkins_path, method: :post, :params => {"checkin[student_id]" => student.id }, :class => 'btn btn-mini btn-danger' %></td>
          </div>
         <td><%= student.checkins.count    %></td>
       </tr>
