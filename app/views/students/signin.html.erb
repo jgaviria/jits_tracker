@@ -21,15 +21,25 @@
   </thead>
   <tbody>
 
+
     <% @students.each do |student| %>
+
+      <% onedaylater =  student.checkins.last.created_at.to_date + 1 %>
+      <% now =  Time.now %>
 
       <tr>
         <td> <%= image_tag student.avatar.url(:thumb) %> </td>
         <td><%= student.first_name %></td>
         <td><%= student.last_name %></td>
+        <% if now < onedaylater %>
         <div class="submit_id">
-        <td><%= button_to 'sign-in', checkins_path, method: :post, :params => {"checkin[student_id]" => student.id }, :class => 'btn btn-mini btn-danger' %></td>
-         </div>
+        <td><%= button_to 'sign-in', checkins_path, method: :post, :params => {"checkin[student_id]" => student.id }, :class => 'btn btn-mini btn-danger test1 ' %></td>
+        </div>
+        <% else %>
+        <div class="submit_id">
+          <td><%= button_to 'sign-in', checkins_path, method: :post, :params => {"checkin[student_id]" => student.id }, :class => 'btn btn-mini btn-danger' %></td>
+        </div>
+        <% end %>
         <td><%= student.checkins.count    %></td>
       </tr>
   <% end %>
