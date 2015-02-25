@@ -24,7 +24,6 @@ class CheckinsController < ApplicationController
   def create
     @checkin = Checkin.new(checkin_params)
 
-
     respond_to do |format|
       if @checkin.save
         format.html { redirect_to "http://localhost:3000/signin", notice: 'Student was successfully checked-in.' }

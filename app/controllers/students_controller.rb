@@ -54,6 +54,8 @@ end
   # POST /students.json
   def create
     @student = Student.new(student_params)
+    @student.checkins.build
+
     respond_to do |format|
       if @student.save
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
